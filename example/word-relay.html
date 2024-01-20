@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>끝말잇기</title>
+  <link rel="stylesheet" href="word.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header-title">끝말잇기 게임</h1>
+  </header>
+  <main class="main">
+    <h2 class="main-title"><span id="order">1</span> 번째 참가자</h2>
+    <p class="main-sub">제시어: <span id="word">미정</span></p>
+    <input placeholder="입력해 주세요" type="text">
+    <div class="control-btn">
+      <button type="button" class="start-btn">
+        <img src="./src/start-disabled.png" alt="start" />
+      </button>
+      <button type="button" class="clear-btn">
+        <img src="./src/reset-disabled.png" alt="reset" />
+      </button>
+    </div>
+  </main>
+
+  <script>
+    //코드 구현 부분    
+    const num = parseInt(prompt('몇 명?'));
+    const $order = document.querySelector('#order');
+    const $word = document.querySelector('#word');
+    const $input = document.querySelector('input');
+    const $btnStart = document.querySelector('.start-btn');
+    // const $btnClear = document.querySelector('.clear-btn');
+
+    let word;
+    let newWord;
+
+    const onInput = (event) => {
+      newWord = event.target.value;
+    }
+
+    const onClickBtn = () => {
+      if (!word) {
+        //미정 일 때
+        word = newWord;
+        $word.textContent = word;
+        $input.value = '';
+        $input.focus();
+        const count = parseInt($order.textContent);
+        $order.textContent = count + 1;
+      } else {
+        //이미 시작했을 때
+        if (word[word.length-1] === newWord[0]) {
+          //앞 단어 마지막 글자 === 뒷 단어 첫번째 글자
+          word = newWord;
+          $word.textContent = word;
+          $input.value = '';
+          $input.focus();
+          const count = parseInt($order.textContent);
+          if (count + 1 > num) {
+            $order.textContent = 1;
+          } else {
+            $order.textContent = count + 1;
+          }
+        } else {
+          //앞 단어 마지막 글자 !== 뒷 단어 첫번째 글자
+          alert("삐빅 오류입니다");
+          $input.value = '';
+          $input.focus();
+        }
+      }
+    }
+
+    $input.addEventListener('input', onInput);
+    $btnStart.addEventListener('click', onClickBtn);
+
+    // 막막할 때 Tip
+
+    // 돔 컨트롤 변수를 만든다
+    // 클릭과 인풋 입력 함수 두 가지를 만든다. 
+    // (처음엔 함수 선언 문법에 맞춰 작성하기도 쉽지 않습니다.)
+    
+    // 인풋창에 입력이 들어오는 이벤트리스너 장착 (콜백 함수로 onInput 함수 받기)
+    // 버튼에 클릭을 체크하는 이벤트리스너 장착 (콜백 함수로 onClickButton 함수 받기)
+
+    // console.log를 활용하여 값이 잘 들어오고 있는지 확인하기
+
+    // 몇 명 참가?
+    // 변수에 담아서
+    // 제시어를 받아야
+    // 받은 제시어 미정이라는 공간에
+    // 버튼 눌렀을 때 미정에 뜨도록
+  </script>
+</body>
+
+</html>
