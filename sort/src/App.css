@@ -44,3 +44,12 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #ddd;
 }
+
+.btn button {
+    width: 6rem;
+    height: 2.2rem;
+    margin-top: 6px;
+    background-color: #ffff6c;
+    box-shadow: 2px 2px 2px #f2a273;
+    margin-right: 14px;
+}

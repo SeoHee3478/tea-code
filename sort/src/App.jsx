@@ -6,6 +6,14 @@ function App() {
         <>
             <article>
                 <h1>💜 지브리 애니 목록 🩷</h1>
+                {/* 정렬 버튼 */}
+                <div className="btn">
+                    <button type="button">인기순위순</button>
+                    <button type="button">제목순</button>
+                    <button type="button">개봉년도순</button>
+                </div>
+
+                {/* 목록 리스트(테이블) */}
                 <table>
                     <thead>
                         <tr>
