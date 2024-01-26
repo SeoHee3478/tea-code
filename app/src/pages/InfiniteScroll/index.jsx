@@ -1,11 +1,15 @@
 import { useCallback, useRef, useState } from "react";
 
 const InfiniteScroll = () => {
+  // 현재 화면에 표시될 아이템들의 리스트
   const [listItems, setListItems] = useState(
     Array.from(Array(30).keys(), (n) => n + 1)
   );
+  // 데이터를 불러오는 중인지 아닌지를 나타내는 상태
   const [loading, setLoading] = useState(false);
+  // 데이터를 불러오는 중인지 아닌지를 나타내는 상태
   const [hasMore, setHasMore] = useState(true);
+  // Intersection Observer의 인스턴스를 저장
   const observer = useRef();
 
   const lastItemRef = useCallback(
@@ -13,9 +17,10 @@ const InfiniteScroll = () => {
       if (loading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
+        // entries는 모든 감시 대상 요소의 교차 상태 정보를 담은 배열
         if (entries[0].isIntersecting && hasMore) {
+          // 요소가 마지막 요소이며 더 불러올 값이 있을 때
           setLoading(true);
-          // 새로운 데이터 로딩을 여기에 추가하시면 됩니다.
           setTimeout(() => {
             // 다음 페이지의 데이터를 불러온 후, setListItems를 통해 기존 리스트에 추가
             const newListItems = Array.from(
