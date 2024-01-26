@@ -1,16 +1,19 @@
 import "./App.css";
-import data from "./data/data.js";
 
 function App() {
+    // 상태값 추가
+
+    // useEffect를 사용하여 버튼 값에 따른 정렬 조건 추가
+
     return (
         <>
             <article>
                 <h1>💜 지브리 애니 목록 🩷</h1>
                 {/* 정렬 버튼 */}
                 <div className="btn">
-                    <button type="button">인기순위순</button>
-                    <button type="button">제목순</button>
-                    <button type="button">개봉년도순</button>
+                    <button type="button">버튼명</button>
+                    <button type="button">버튼명</button>
+                    <button type="button">버튼명</button>
                 </div>
 
                 {/* 목록 리스트(테이블) */}
@@ -23,13 +26,11 @@ function App() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((list) => (
-                            <tr key={list.id}>
-                                <td>{list.rank}위</td>
-                                <td>{list.title}</td>
-                                <td>{list.year}</td>
-                            </tr>
-                        ))}
+                        <tr key="1">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </article>

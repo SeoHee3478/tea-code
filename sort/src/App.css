@@ -49,7 +49,12 @@ tbody tr:hover {
     width: 6rem;
     height: 2.2rem;
     margin-top: 6px;
-    background-color: #ffff6c;
+    background-color: #fffa6c;
     box-shadow: 2px 2px 2px #f2a273;
     margin-right: 14px;
+}
+
+.btn .active {
+    background-color: #fffa6c;
+    box-shadow: inset 1px 1px rgba(1, 2, 2, 0.1);
 }

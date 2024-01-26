@@ -42,8 +42,8 @@ button {
     font-weight: 500;
     font-family: inherit;
     cursor: pointer;
-    transition: transform var(--animation-duration) ease;
+    /* transition: transform var(--animation-duration) ease; */
 }
-button:hover {
+/* button:hover {
     transform: scale(1.1);
-}
+} */
