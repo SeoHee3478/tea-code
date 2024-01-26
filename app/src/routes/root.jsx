@@ -1,15 +1,4 @@
 import { Form, Link, Outlet } from "react-router-dom";
-import { getContacts, createContact } from "../contacts";
-
-export async function action() {
-  const contact = await createContact();
-  return { contact };
-}
-
-export async function loader() {
-  const contacts = await getContacts();
-  return { contacts };
-}
 
 export default function Root() {
   return (
@@ -33,12 +22,10 @@ export default function Root() {
           </Form>
         </div>
         <nav>
+          {/* 페이지 링크 추가 */}
           <ul>
             <li>
               <Link to={`infinite-scroll`}>무한스크롤</Link>
-            </li>
-            <li>
-              <Link to={`contacts/2`}>Your Friend</Link>
             </li>
           </ul>
         </nav>
