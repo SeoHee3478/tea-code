@@ -1,8 +1,37 @@
-# React + Vite
+# React-Component-Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sort 기능
 
-Currently, two official plugins are available:
+<img width="600" alt="sort_example" src="https://github.com/wSeungMi/wSeungMi/assets/104605709/8c3aaf07-6b5a-46e8-a672-e38428ab3408">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 주제
+
+지브리 애니 목록으로 정렬 기능 구현하기
+
+## 목표
+
+작은 단위의 리액트 컴포넌트 기능을 페어프로그래밍으로 구현하면서 드라이버는 프로그래밍 사고력을 향상시키고, 네비게이터는 자신이 구현한 기능에 대해 명확한 설명을 할 수 있도록 연습하는 것을 목표로 합니다.
+
+## 내용
+
+매주 서로 역할을 바꿔가며 네비게이터의 설명에 따라 드라이버가 주어진 기능을 똑같이 구현합니다.
+
+## 기능 구현 명세
+
+### 조건
+
+-   인기순위순은 data의 rank값을 통해 오름차순으로 정렬한다.
+-   제목순은 data의 title값을 통해 오름차순으로 정렬한다.
+-   최근개봉순은 data의 year값을 통해 내림차순으로 정렬한다.
+
+### 프로세스
+
+1. `data.js`에서 어떤 형태의 데이터를 불러오는지 확인한다.
+2. data를 담을 상태값을 추가한다.
+3. (조회기능) data를 테이블 리스트로 뿌려준다.
+4. `인기순위순`, `제목순`, `최근개봉순` 버튼을 만들어준다.
+5. 현재 선택한 버튼의 값을 담을 상태값을 추가한다.
+6. 페이지 리렌더링을 위해 useEffect에 의존성 배열을 추가해준다.
+7. 불변성을 유지하기 위해 data의 값을 복사한다.
+8. 복사한 data값을 이용하여 각 버튼 값에 따른 정렬기능을 처리해준다.
+9. 변경된 값을 data를 담았던 상태값에 넣어준다.
