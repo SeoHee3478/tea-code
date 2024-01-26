@@ -8,6 +8,7 @@ import Root, {
 } from "./routes/root";
 import ErrorPage from "./error-page";
 import InfiniteScroll from "./pages/InfiniteScroll";
+import Sort from "./pages/Sort";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "infinite-scroll",
         element: <InfiniteScroll />,
+      },
+      {
+        path: "sort",
+        element: <Sort />,
       },
     ],
   },

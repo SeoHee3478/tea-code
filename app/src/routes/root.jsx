@@ -38,7 +38,7 @@ export default function Root() {
               <Link to={`infinite-scroll`}>무한스크롤</Link>
             </li>
             <li>
-              <Link to={`contacts/2`}>Your Friend</Link>
+              <Link to={`sort`}>정렬</Link>
             </li>
           </ul>
         </nav>
