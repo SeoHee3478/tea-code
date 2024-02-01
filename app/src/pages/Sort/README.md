@@ -2,7 +2,9 @@
 
 ## Sort 기능
 
-<img width="600" alt="sort_example" src="https://github.com/wSeungMi/wSeungMi/assets/104605709/8c3aaf07-6b5a-46e8-a672-e38428ab3408">
+<div align="center">
+<img width="400" alt="sort_example" src="https://github.com/wSeungMi/tea-code/assets/104605709/ca0bb065-f6ec-4799-9607-d95775272c43">
+</div>
 
 ## 주제
 
@@ -20,9 +22,9 @@
 
 ### 조건
 
--   인기순위순은 data의 rank값을 통해 오름차순으로 정렬합니다.
--   제목순은 data의 title값을 통해 오름차순으로 정렬합니다.
--   최근개봉순은 data의 year값을 통해 내림차순으로 정렬합니다.
+- 인기순위순은 data의 rank값을 통해 오름차순으로 정렬합니다.
+- 제목순은 data의 title값을 통해 오름차순으로 정렬합니다.
+- 최근개봉순은 data의 year값을 통해 내림차순으로 정렬합니다.
 
 ### 프로세스
 
