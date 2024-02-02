@@ -7,7 +7,7 @@ const InfiniteScroll = () => {
   );
   // 데이터를 불러오는 중인지 아닌지를 나타내는 상태
   const [loading, setLoading] = useState(false);
-  // 데이터를 불러오는 중인지 아닌지를 나타내는 상태
+  // 불러올 데이터가 존재하는지 나타내는 상태
   const [hasMore, setHasMore] = useState(true);
   // Intersection Observer의 인스턴스를 저장
   const observer = useRef();
@@ -19,7 +19,8 @@ const InfiniteScroll = () => {
       observer.current = new IntersectionObserver((entries) => {
         // entries는 모든 감시 대상 요소의 교차 상태 정보를 담은 배열
         if (entries[0].isIntersecting && hasMore) {
-          // 요소가 마지막 요소이며 더 불러올 값이 있을 때
+          // 요소가 마지막 요소이며 더 불러올 값이 있을 때 실행
+          // 실제로 사용 할 때는 아래에 데이터를 불러오는 Ajax 코드를 작성
           setLoading(true);
           setTimeout(() => {
             // 다음 페이지의 데이터를 불러온 후, setListItems를 통해 기존 리스트에 추가
