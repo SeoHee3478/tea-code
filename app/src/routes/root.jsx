@@ -40,6 +40,9 @@ export default function Root() {
             <li>
               <Link to={`sort`}>정렬</Link>
             </li>
+            <li>
+              <Link to={`pagination`}>페이지네이션</Link>
+            </li>
           </ul>
         </nav>
       </div>

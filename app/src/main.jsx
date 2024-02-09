@@ -9,6 +9,7 @@ import Root, {
 import ErrorPage from "./error-page";
 import InfiniteScroll from "./pages/InfiniteScroll";
 import Sort from "./pages/Sort";
+import Posts from "./Pages/Pagination"
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "sort",
         element: <Sort />,
+      },
+      {
+        path: "pagination",
+        element: <Posts />,
       },
     ],
   },
