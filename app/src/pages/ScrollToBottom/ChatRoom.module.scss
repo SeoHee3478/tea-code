@@ -1,0 +1,240 @@
+.chatBox {
+  width: 300px;
+  font-size: 13px;
+  border: solid 1px lightgrey;
+
+  .chatContent {
+    overflow: auto;
+    height: 300px;
+    padding: 0 10px;
+  }
+
+  .card {
+    border-radius: 4px;
+  }
+
+  .cardHeader {
+    background: #683db8;
+  }
+
+  .headerTitle {
+    height: 50px;
+  }
+
+  .cardHeaderTitle i {
+    font-size: 10px;
+    color: #32e4cd;
+    margin-top: 0;
+    margin-right: 6px;
+  }
+
+  .cardHeader .cardHeaderTitle {
+    color: #fff;
+  }
+
+  .chatContent small {
+    margin: 0;
+  }
+
+  .chatContent p {
+    background: #ecf1f8;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 0;
+  }
+
+  .myContent .mediaContent {
+    width: 80%;
+  }
+
+  .myContent .message {
+    float: right;
+    background: #683db8;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .myContent .chatContent small {
+    float: right;
+  }
+
+  .myContent small {
+    display: block;
+    float: right;
+    width: 100%;
+    text-align: right;
+  }
+
+  .cardFooter {
+    display: flex;
+    padding: 5px 0;
+    border-top: 1px solid lightgrey;
+    .chatTextarea {
+      font-size: 14px;
+      padding: 8px;
+      height: 40px;
+      width: 100%;
+      border: none;
+      overflow: auto;
+      outline: none;
+
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      resize: none;
+    }
+    .chatSendBtn {
+      font-size: medium;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 40px;
+      background-color: #683db8;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .chatMessageGroup {
+    .chatThumb {
+      float: left;
+      width: 20%;
+    }
+
+    .chatMessages {
+      float: left;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      float: left;
+      padding: 10px;
+      background: #ecf1f8;
+      font-size: 13px;
+      border-radius: 5px;
+      margin-bottom: 3px;
+    }
+
+    .chatMessages .from {
+      float: left;
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-size: 11px;
+    }
+
+    .chatThumb img {
+      border-radius: 40px;
+    }
+  }
+
+  .writerUser .chatMessages {
+    float: right;
+    width: 100%;
+
+    .message {
+      float: right;
+      background: #683db8;
+      color: #fff;
+    }
+
+    .from {
+      float: left;
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+  }
+
+  .chatMessageGroup .typing {
+    float: left;
+  }
+
+  .cardHeaderIcon i {
+    color: #fff;
+    font-size: 13px;
+  }
+}
+
+.outsideBox {
+  height: 100px;
+  background: #f8c;
+  width: 200px;
+  margin: 20px;
+  overflow: auto;
+
+  .contentInsider {
+    height: 300px;
+    background: #c9c;
+  }
+}
+
+.spinner {
+  margin: 0 30px;
+  width: 70px;
+  text-align: center;
+
+  > div {
+    width: 4px;
+    height: 4px;
+    background-color: #888;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: skBouncedelay 1.4s infinite ease-in-out both;
+    animation: skBouncedelay 1.4s infinite ease-in-out both;
+  }
+
+  .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+
+  @-webkit-keyframes skBouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes skBouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+
+.emojiBox {
+  width: 150px;
+  margin: 30px;
+
+  .box {
+    height: 100px;
+    padding: 4px;
+  }
+}
+
+.cardHeaderTitle img {
+  border-radius: 40px;
+}

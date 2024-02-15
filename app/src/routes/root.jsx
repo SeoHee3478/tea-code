@@ -43,6 +43,9 @@ export default function Root() {
             <li>
               <Link to={`pagination`}>페이지네이션</Link>
             </li>
+            <li>
+              <Link to={`scroll-to-bottom`}>스크롤 바닥으로 내리기</Link>
+            </li>
           </ul>
         </nav>
       </div>
