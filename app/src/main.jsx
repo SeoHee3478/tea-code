@@ -9,7 +9,8 @@ import Root, {
 import ErrorPage from "./error-page";
 import InfiniteScroll from "./pages/InfiniteScroll";
 import Sort from "./pages/Sort";
-import Posts from "./Pages/Pagination"
+import Posts from "./pages/Pagination";
+import ScrollToBottom from "./pages/ScrollToBottom";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "pagination",
         element: <Posts />,
+      },
+      {
+        path: "scroll-to-bottom",
+        element: <ScrollToBottom />,
       },
     ],
   },
