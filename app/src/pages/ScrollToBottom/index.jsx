@@ -1,7 +1,7 @@
-// 1. 채팅 내용을 저장할 state를 선언합니다. 데이터타입은 아래와 같습니다.
-
+import { useState } from "react";
 import ChatRoom from "./ChatRoom";
 
+// 1. 채팅 내용을 저장할 state를 선언합니다. 데이터타입은 아래와 같습니다.
 // ```js
 // type chatList = {
 //   chatRoomName: string,
@@ -24,10 +24,24 @@ import ChatRoom from "./ChatRoom";
 //    6-2. ref와 useEffect를 사용하여 chatList가 새로 업데이트될때 스크롤을 최하단으로 이동하도록 구현해주세요.
 
 const ScrollToBottom = () => {
+  const [chatList, setChatList] = useState([]);
+
+  const handleChatList = (chatData) => {
+    setChatList((state) => [...state, chatData]);
+  };
+
   return (
     <div style={{ display: "flex", gap: "30px" }}>
-      <ChatRoom />
-      <ChatRoom />
+      <ChatRoom
+        title={"lily"}
+        handleChatList={handleChatList}
+        chatList={chatList}
+      />
+      <ChatRoom
+        title={"amy"}
+        handleChatList={handleChatList}
+        chatList={chatList}
+      />
     </div>
   );
 };

@@ -37,7 +37,7 @@ const ChatRoom = ({ title, handleChatData, chatList }) => {
                 ref={chatContainerRef}
               >
                 <div className={S.content}>
-                  {chatList.map((chat, i) => (
+                  {chatList?.map((chat, i) => (
                     <div
                       className={`${S.chatMessageGroup} ${
                         title === chat.chatRoomName ? S.writerUser : ""
