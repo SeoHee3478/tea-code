@@ -1,4 +1,4 @@
-import { Form, Link, Outlet } from "react-router-dom";
+import { Form, Link, Navigate, Outlet, useLocation } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 
 export async function action() {
@@ -11,9 +11,21 @@ export async function loader() {
   return { contacts };
 }
 
+//0번째 index에 추가해주세요.
+const RouteList = [
+  { link: "scroll-to-bottom", title: "스크롤 바닥으로 내리기" },
+  { link: "pagination", title: "페이지네이션" },
+  { link: "sort", title: "정렬" },
+  { link: "infinite-scroll", title: "무한스크롤" },
+];
+
 export default function Root() {
+  const location = useLocation();
   return (
     <>
+      {location.pathname === "/" && (
+        <Navigate to={`/${RouteList[0].link}`} replace />
+      )}
       <div id="sidebar">
         <h1>List</h1>
         <div>
@@ -34,18 +46,11 @@ export default function Root() {
         </div>
         <nav>
           <ul>
-            <li>
-              <Link to={`infinite-scroll`}>무한스크롤</Link>
-            </li>
-            <li>
-              <Link to={`sort`}>정렬</Link>
-            </li>
-            <li>
-              <Link to={`pagination`}>페이지네이션</Link>
-            </li>
-            <li>
-              <Link to={`scroll-to-bottom`}>스크롤 바닥으로 내리기</Link>
-            </li>
+            {RouteList.map((route, i) => (
+              <li key={i}>
+                <Link to={`${route.link}`}>{route.title}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
