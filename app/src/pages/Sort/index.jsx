@@ -6,7 +6,6 @@ const Sort = () => {
   // 상태값 추가
   const [sortedList, setSortedList] = useState(data);
   const [currentSorted, setCurrentSorted] = useState("인기순위순");
-  console.log("누른 버튼: ", currentSorted);
 
   // useEffect를 사용하여 버튼 값에 따른 정렬 조건 추가
   useEffect(() => {
@@ -28,7 +27,7 @@ const Sort = () => {
     }
 
     setSortedList(sorted);
-  }, [sortedList, currentSorted]);
+  }, [currentSorted]);
 
   return (
     <>
