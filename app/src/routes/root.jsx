@@ -13,6 +13,7 @@ export async function loader() {
 
 //0번째 index에 추가해주세요.
 const RouteList = [
+  { link: "darkmode", title: "다크모드" },
   { link: "scroll-to-bottom", title: "스크롤 바닥으로 내리기" },
   { link: "pagination", title: "페이지네이션" },
   { link: "sort", title: "정렬" },
