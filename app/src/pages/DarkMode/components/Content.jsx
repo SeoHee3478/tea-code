@@ -1,7 +1,10 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 import S from "../../DarkMode/DarkMode.module.scss";
 
-const Content = ({ theme, setTheme }) => {
+const Content = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   const handleToggleTheme = () => {
     setTheme(!theme);
   };
@@ -20,11 +23,6 @@ const Content = ({ theme, setTheme }) => {
       </div>
     </div>
   );
-};
-
-Content.propTypes = {
-  theme: PropTypes.bool.isRequired,
-  setTheme: PropTypes.func.isRequired,
 };
 
 export default Content;

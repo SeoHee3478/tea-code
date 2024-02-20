@@ -1,16 +1,15 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 import S from "../../DarkMode/DarkMode.module.scss";
 
-const Header = ({ theme }) => {
+const Header = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <header className={`${S.header} ${theme ? S.dark : S.light}`}>
       <h1 className={S.headerTitle}>⛰️ tea-code study</h1>
     </header>
   );
-};
-
-Header.propTypes = {
-  theme: PropTypes.bool.isRequired,
 };
 
 export default Header;
