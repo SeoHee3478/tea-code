@@ -6,7 +6,10 @@ const Content = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleToggleTheme = () => {
-    setTheme(!theme);
+    const newTheme = !theme;
+    setTheme(newTheme);
+
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
@@ -16,6 +19,7 @@ const Content = () => {
         <input
           type="checkbox"
           id="checkbox1"
+          checked={theme}
           className={S.themeInput}
           onChange={handleToggleTheme}
         />
