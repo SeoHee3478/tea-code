@@ -1,5 +1,5 @@
 // import { useState } from "react";
-// import { ThemeContext } from "./context/themeContext";
+// import { ThemeContext } from "./context/ThemeContext";
 // import PropTypes from "prop-types";
 // import Page from "./components/Page";
 
