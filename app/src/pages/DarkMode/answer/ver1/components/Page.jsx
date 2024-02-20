@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
-import S from "../../DarkMode/DarkMode.module.scss";
+import S from "../DarkMode.module.scss";
 
 const Page = ({ theme, setTheme }) => {
   return (

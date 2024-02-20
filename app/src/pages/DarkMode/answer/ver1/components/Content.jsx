@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import S from "../../DarkMode/DarkMode.module.scss";
+import S from "../DarkMode.module.scss";
 
 const Content = ({ theme, setTheme }) => {
   const handleToggleTheme = () => {
