@@ -1,5 +1,7 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import S from "../DarkMode.module.scss";
+import { useContext } from "react";
+import { ThemeModeContext } from "../context/ThemeModeContext";
 
 // @ver1.
 // 5. 받아온 prop을 선언해주고, header와 동일하게 css를 동적으로 설정해줍니다.
@@ -16,11 +18,25 @@ import S from "../DarkMode.module.scss";
 //    (input의 checkbox 속성을 조정해주세요.)
 // 고생하셨습니다🙌
 const Content = () => {
+  const { theme, setTheme } = useContext(ThemeModeContext);
+
+  const handleThemeChange = () => {
+    const newTheme = !theme;
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
   return (
-    <div className={`${S.content}`}>
+    <div className={`${S.content} ${theme ? S.dark : S.light}`}>
       <h1 className={S.title}>Just Do It! 🏃‍♀️</h1>
       <div className={S.switch}>
-        <input type="checkbox" id="checkbox1" className={S.themeInput} />
+        <input
+          type="checkbox"
+          id="checkbox1"
+          checked={theme}
+          className={S.themeInput}
+          onChange={handleThemeChange}
+        />
         <label className={S.themeLabel} htmlFor="checkbox1"></label>
       </div>
     </div>
@@ -28,9 +44,9 @@ const Content = () => {
 };
 
 // ver1의 PropTypes
-Content.propTypes = {
-  theme: PropTypes.bool.isRequired,
-  setTheme: PropTypes.func.isRequired,
-};
+// Content.propTypes = {
+//   theme: PropTypes.bool.isRequired,
+//   setTheme: PropTypes.func.isRequired,
+// };
 
 export default Content;
