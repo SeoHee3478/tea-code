@@ -1,6 +1,7 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import { useState } from "react";
 import Page from "./components/Page";
-
+import { ThemeModeContext } from "./context/ThemeModeContext";
 /**
  * date: 2024-02-21
  * author: seungmi
@@ -37,17 +38,28 @@ import Page from "./components/Page";
 // (localStorage에서 받아온 값에 따라 버튼의 스위치 위치도 변경되도록 처리해주세요.)
 // 3. 생성된 함수를 theme state에 초기값으로 지정해주고 마지막으로 css 변경하러 가봅시다~ (content.jsx로 이동)
 
+function initialStoreTheme() {
+  const isDarkTheme = JSON.parse(localStorage.getItem("theme"));
+  return isDarkTheme ? isDarkTheme : false;
+}
+
 const DarkMode = () => {
-  return <Page />;
+  const [theme, setTheme] = useState(initialStoreTheme);
+
+  return (
+    <ThemeModeContext.Provider value={{ theme, setTheme }}>
+      <Page />
+    </ThemeModeContext.Provider>
+  );
 };
 
 // ver2의 PropTypes
-// DarkMode.propTypes = {
-//   theme: PropTypes.bool.isRequired,
-// };
+DarkMode.propTypes = {
+  theme: PropTypes.bool.isRequired,
+};
 
-// DarkMode.defaultProps = {
-//   theme: false,
-// };
+DarkMode.defaultProps = {
+  theme: false,
+};
 
 export default DarkMode;

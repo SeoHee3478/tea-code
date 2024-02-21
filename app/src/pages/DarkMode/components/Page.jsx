@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import Header from "./Header";
 import Content from "./Content";
@@ -21,9 +21,9 @@ const Page = () => {
 };
 
 // ver1의 PropTypes
-Page.propTypes = {
-  theme: PropTypes.bool.isRequired,
-  setTheme: PropTypes.func.isRequired,
-};
+// Page.propTypes = {
+//   theme: PropTypes.bool.isRequired,
+//   setTheme: PropTypes.func.isRequired,
+// };
 
 export default Page;
