@@ -11,6 +11,7 @@ import InfiniteScroll from "./pages/InfiniteScroll";
 import Sort from "./pages/Sort";
 import Posts from "./pages/Pagination";
 import ScrollToBottom from "./pages/ScrollToBottom";
+import DarkMode from "./pages/DarkMode";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "scroll-to-bottom",
         element: <ScrollToBottom />,
+      },
+      {
+        path: "darkmode",
+        element: <DarkMode />,
       },
     ],
   },
