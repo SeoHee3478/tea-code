@@ -40,7 +40,7 @@ import { ThemeModeContext } from "./context/ThemeModeContext"
 // 3. 생성된 함수를 theme state에 초기값으로 지정해주고 마지막으로 css 변경하러 가봅시다~ (content.jsx로 이동)
 
 function initalLocalStorage() {
-  const initalValue = localStorage.getItem('theme')
+  const initalValue = JSON.parse(localStorage.getItem('theme'))
   return initalValue ? initalValue : false;
 }
 
