@@ -12,6 +12,7 @@ import Sort from "./pages/Sort";
 import Posts from "./pages/Pagination";
 import ScrollToBottom from "./pages/ScrollToBottom";
 import DarkMode from "./pages/DarkMode";
+import Debounce from "./pages/Debounce";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "darkmode",
         element: <DarkMode />,
+      },
+      {
+        path: "debounce",
+        element: <Debounce />,
       },
     ],
   },
