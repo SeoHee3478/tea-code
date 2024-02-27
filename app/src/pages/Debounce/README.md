@@ -1,4 +1,6 @@
 # Debounce 사용해서 검색 UI 구현
+![스크린샷 2024-02-26 오후 11 02 00](https://github.com/SeoHee3478/tea-code/assets/78894678/0651a1e6-b56d-48cc-9c18-76954981fc01)
+
 
 ## 주제
 
