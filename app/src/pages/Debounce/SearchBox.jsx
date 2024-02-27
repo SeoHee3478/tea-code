@@ -4,8 +4,13 @@
 //   - placeholder 적절하게 설정 
 //   - 부모 요소에서 상태 관리를 하기 위해 prop으로 value와 onChange를 받기
 
-export function SearchBox() {
+export function SearchBox({ value, onChange }) {
   return (
-    <></>
+    <input
+      type="search"
+      placeholder="국가 이름을 입력하세요"
+      value={value}
+      onChange={onChange}
+    />
   );
 }
