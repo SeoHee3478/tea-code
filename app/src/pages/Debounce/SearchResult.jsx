@@ -5,12 +5,21 @@
 //   - searching 가 true면 로딩중 안내 띄워주고 false면 리스트 보여주는 3항 연산자 구현하기
 //   - article에 aria-busy 속성 추가해주기
 
-export function SearchResult() {
+export function SearchResult({ countries, searching }) {
   return (
-    <article>
-      <header>총 {0}개의 국가가 검색되었습니다.</header>
-      <ul>
-      </ul>
+    <article aria-busy={searching}>
+      {searching ? ("로딩중입니다...") : (
+        <>
+          <header>총 {countries.length}개의 국가가 검색되었습니다.</header>
+          <ul>
+            {countries.map(({ code, ko, en }) => (
+              <li key={code}>
+                {ko} ({en})
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </article>
   );
 }
