@@ -13,6 +13,7 @@ import Posts from "./pages/Pagination";
 import ScrollToBottom from "./pages/ScrollToBottom";
 import DarkMode from "./pages/DarkMode";
 import Debounce from "./pages/Debounce";
+import ImageLazyLoading from "./pages/ImageLazyLoading";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     children: [
+      {
+        path: "image-lazy-loading",
+        element: <ImageLazyLoading />,
+      },
       {
         path: "infinite-scroll",
         element: <InfiniteScroll />,
