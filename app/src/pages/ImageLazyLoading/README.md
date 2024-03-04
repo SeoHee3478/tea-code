@@ -11,9 +11,8 @@ Image Lazy Loading은 페이지 안에 있는 실제 이미지들이 실제로 
 ## 내용
 
 - **Intersection Observer API**를 사용하여 화면에 보여지는 콘텐츠인지 확인하고 브라우저에 보이는 이미지를 먼저 로딩하기
-- 이미지 색상을 기준으로 **image placeholder** 컬러 설정해주기
-  - HTML5 Canvas API
 - [구글 라이트하우스](https://developer.chrome.com/docs/lighthouse/overview?hl=ko)를 사용해서 비교해보기
+- 리소스 비교해보기
 
 ## 역할
 
@@ -27,3 +26,17 @@ Image Lazy Loading은 페이지 안에 있는 실제 이미지들이 실제로 
 - 뷰포인트에 있는 이미지가 순차적으로 보여집니다.
 
 ### 프로세스
+
+1.  observer 선언하기
+    1.1 observer를 선언합니다.
+    1.2 ref를 선언합니다.
+    1.3 useEffect안에서 observer를 이동시킵니다.
+    1.4 observer를 등록하고 해지하는 로직을 작성합니다.
+2.  observer를 사용해 뷰토인트에 위치해있는지 확인하기.
+    2.1 load state를 선언합니다.
+    2.2 이미지가 뷰포트안에 들어오면 load 상태를 true로 변경하고 연결을 끊습니다.
+    2.3 이미지 ref에 current 값이 있으면 옵저버에 설정해줍니다.
+3.  이미지 로드 전/후 보여줄 컴포넌트 설정하기
+    3.1 load 상태값을 활용하여 placeholder img 태그를 작성합니다.
+    3.2 이미지가 완전히 로드된 후 보여줄 background 컬러가 있는 img 태그를 작성합니다.
+4.  rootMargin을 설정하여 이미지 태그가 뷰포트에 보이기 일정 px전 부터 로드될 수 있게 합니다.
