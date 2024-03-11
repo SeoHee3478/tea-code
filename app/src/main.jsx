@@ -14,6 +14,7 @@ import ScrollToBottom from "./pages/ScrollToBottom";
 import DarkMode from "./pages/DarkMode";
 import Debounce from "./pages/Debounce";
 import ImageLazyLoading from "./pages/ImageLazyLoading";
+import FullPageScroll from "./pages/FullPageScroll";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "debounce",
         element: <Debounce />,
+      },
+      {
+        path: "fullPage-scroll",
+        element: <FullPageScroll />,
       },
     ],
   },
