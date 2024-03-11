@@ -1,0 +1,70 @@
+.Box {
+  margin-top: -32px;
+  overflow-y: hidden;
+}
+
+.nav {
+  position: sticky;
+  background-color: #333;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  ul {
+    text-align: center;
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    li {
+      display: inline;
+      color: #f2f2f2;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: #111;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.outer {
+  text-align: center;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* 화면에서 스크롤바 안보이게 */
+.outer::-webkit-scrollbar {
+  display: none;
+}
+
+.inner {
+  height: 100vh;
+  font-size: 60px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &.pageOne {
+    background-color: #00b783;
+  }
+
+  &.pageTwo {
+    background-color: #9e55f6;
+  }
+
+  &.pageThree {
+    background-color: #de448f;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 5px;
+  background-color: gray;
+}
