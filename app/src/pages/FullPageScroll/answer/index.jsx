@@ -5,7 +5,7 @@ const FullPageScroll = () => {
   const scrollRef = useRef();
   const DIVIDER = 5;
 
-  const scrollToPage = (pageHeight, pageIndex) => {
+  const scrollToDown = (pageHeight, pageIndex) => {
     scrollRef.current.scrollTo({
       top: pageHeight * pageIndex + DIVIDER * pageIndex,
       left: 0,
@@ -41,11 +41,11 @@ const FullPageScroll = () => {
       if (deltaY > 0) {
         // 스크롤 내릴 때
         if (scrollTop >= 0 && scrollTop < pageHeight) {
-          scrollToPage(pageHeight, 1);
+          scrollToDown(pageHeight, 1);
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          scrollToPage(pageHeight, 2);
+          scrollToDown(pageHeight, 2);
         } else {
-          scrollToPage(pageHeight, 3);
+          scrollToDown(pageHeight, 3);
         }
       } else {
         // 스크롤 올릴 때
