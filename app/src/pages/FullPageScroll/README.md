@@ -1,5 +1,9 @@
 # FullPage-scroll 기능
 
+<div align="center">
+<img width="250" alt="sort_example" src="https://github.com/minkyeongJ/tea-code/assets/104605709/230efb62-9c42-4a5c-bfc2-da65f4f78de2">
+</div>
+
 ## 주제
 
 싱글 페이지 사이트에서 자주 사용되는 풀페이지스크롤 기능을 구현해봅니다. (FullPageScroll, OnePageScroll, SinglePageScroll 등 부르는 명칭이 다양합니다.)
