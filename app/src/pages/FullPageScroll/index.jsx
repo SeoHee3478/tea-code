@@ -95,7 +95,7 @@ const FullPageScroll = () => {
 
   return (
     <>
-      <div className={S.Box}>
+      <div className={S.box}>
         <nav className={S.nav}>
           <ul>
             {/* 11. 버튼에 페이지 이동 함수 이벤트 걸어주기 */}
