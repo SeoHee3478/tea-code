@@ -73,7 +73,7 @@ const FullPageScroll = () => {
 
   return (
     <>
-      <div className={S.Box}>
+      <div className={S.box}>
         <nav className={S.nav}>
           <ul>
             <li onClick={() => goToPage(1)}>ONE</li>
