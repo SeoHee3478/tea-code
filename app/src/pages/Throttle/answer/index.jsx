@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SearchBox } from "./SearchBox";
-import { SearchResults } from "./SearchResult";
+import { SearchResults } from "./SearchResults";
 import { fetchCountries } from "./countries";
 import PropTypes from "prop-types";
 
@@ -18,23 +18,18 @@ const ThrottleContainer = () => {
   const [query, setQuery] = useState("");
   const [countries, setCountries] = useState([]);
   const [searching, setSearching] = useState(false);
-  const [timer, setTimer] = useState(null);
+  const [throttledCheck, setThrottledCheck] = useState(0);
 
   // 검색어가 변경될 때마다 호출되는 함수
   const handleSearch = (value) => {
     setQuery(value);
-
-    // 이전에 설정된 타이머가 있다면 취소
-    if (timer) {
-      clearTimeout(timer);
-    }
-
-    // 1초 후에 검색 함수 호출
-    setTimer(
+    if (!throttledCheck) {
+      setThrottledCheck(true);
       setTimeout(() => {
         throttledSearch(value);
-      }, 500)
-    );
+        setThrottledCheck(false);
+      }, 500);
+    }
   };
 
   // 쓰로틀링된 함수 정의
@@ -49,7 +44,7 @@ const ThrottleContainer = () => {
 
   return (
     <>
-      <h1>Throttle을 적용한 검색창</h1>
+      <h1>throttled를 적용한 검색창</h1>
       <SearchBox value={query} onChange={(e) => handleSearch(e.target.value)} />
       <SearchResults countries={countries} searching={searching} />
     </>
