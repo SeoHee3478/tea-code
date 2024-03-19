@@ -3,7 +3,6 @@ import { SearchBox } from "./SearchBox";
 import { SearchResults } from "./SearchResults";
 import { fetchCountries } from "./countries";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
 
 const ThrottleContainer = () => {
   // 1. 쓰로틀링된 검색을 지연시키기 위한 timer, setTimer 상태값 추가
@@ -19,37 +18,34 @@ const ThrottleContainer = () => {
   const [query, setQuery] = useState("");
   const [countries, setCountries] = useState([]);
   const [searching, setSearching] = useState(false);
-  const [debouncedQuery, setDebouncedQuery] = useState(query);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setDebouncedQuery(query);
-    }, 1000);
-    return () => clearTimeout(timeout);
-  }, [query]);
+  const [throttledCheck, setThrottledCheck] = useState(0);
 
   // 검색어가 변경될 때마다 호출되는 함수
-  const handleSearch = () => {
-    // 이전에 설정된 타이머가 있다면 취소
-    // 1초 후에 검색 함수 호출
+  const handleSearch = (value) => {
+    setQuery(value);
+    if (!throttledCheck) {
+      setThrottledCheck(true);
+      setTimeout(() => {
+        throttledSearch(value);
+        setThrottledCheck(false);
+      }, 500);
+    }
   };
 
-  useEffect(() => {
+  // 쓰로틀링된 함수 정의
+  const throttledSearch = (throttledQuery) => {
     setSearching(true);
-    fetchCountries(debouncedQuery).then((countries) => {
+    fetchCountries(throttledQuery).then((countries) => {
       setCountries(countries);
       setSearching(false);
-      console.log(debouncedQuery);
+      console.log(throttledQuery);
     });
-  }, [debouncedQuery]);
-
-  // 쓰로틀링된 함수 정의
-  const throttledSearch = () => {};
+  };
 
   return (
     <>
-      <h1>Debounce를 적용한 검색창</h1>
-      <SearchBox value={query} onChange={(e) => setQuery(e.target.value)} />
+      <h1>throttled를 적용한 검색창</h1>
+      <SearchBox value={query} onChange={(e) => handleSearch(e.target.value)} />
       <SearchResults countries={countries} searching={searching} />
     </>
   );
