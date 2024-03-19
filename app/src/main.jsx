@@ -15,6 +15,7 @@ import DarkMode from "./pages/DarkMode";
 import Debounce from "./pages/Debounce";
 import ImageLazyLoading from "./pages/ImageLazyLoading";
 import FullPageScroll from "./pages/FullPageScroll";
+import ThrottleContainer from "./pages/Throttle";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     children: [
+      {
+        path: "throttle",
+        element: <ThrottleContainer />,
+      },
       {
         path: "image-lazy-loading",
         element: <ImageLazyLoading />,
