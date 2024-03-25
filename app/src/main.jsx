@@ -16,6 +16,7 @@ import Debounce from "./pages/Debounce";
 import ImageLazyLoading from "./pages/ImageLazyLoading";
 import FullPageScroll from "./pages/FullPageScroll";
 import ThrottleContainer from "./pages/Throttle";
+import Intro from "./pages/Intro";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     children: [
+      {
+        path: "intro",
+        element: <Intro />,
+      },
       {
         path: "throttle",
         element: <ThrottleContainer />,
