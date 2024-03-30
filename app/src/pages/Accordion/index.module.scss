@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+.accordionWrapper {
+  font-family: "VT323", sans-serif;
+
+  ol,
+  li,
+  ul {
+    list-style: none;
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .accordionList {
+    h1 {
+      font-size: 50px;
+      margin-bottom: 16px;
+    }
+  }
+
+  .accordionHeader {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 16px;
+    border: 2px solid #232323;
+
+    .accordionIcon {
+      display: flex;
+      align-items: center;
+      width: 24px;
+    }
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .accordionContent {
+    background-color: #fff;
+    border-left: 2px solid #232323;
+    border-right: 2px solid #232323;
+
+    p {
+      margin: 0;
+      padding: 10px;
+    }
+  }
+
+  .inactive {
+    display: none;
+  }
+
+  .active {
+    border-bottom: 2px solid #232323;
+  }
+}
