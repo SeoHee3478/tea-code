@@ -1,26 +1,61 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
-import data from "./data";
 import S from "./index.module.scss";
 
-const AccordionItems = ({
-  id,
-  number,
-  question,
-  answer,
-  handleToggleItem,
-  isActive,
-}) => {
+// 2. index에서 넘겨받은 prop을 받아오기
+const AccordionList = () => {
+  /**
+   * 3. 선택한 리스트 값을 담을 상태값 추가
+   * s-2. 선택한 리스트의 id값을 담을 상태값 추가(추천명: activeId)
+   * m-2. 선택한 리스트의 id값들을 담을 상태값 추가(추천명: activeArr)
+   */
+
+  // single 버전 상태값
+
+  // multiple 버전 상태값
+
+  // 4. 리스트 클릭시 상태값을 저장할 함수 생성(추천명: handleToggleItem)
+  // s-3. single 버전 클릭 상태값 저장 로직 추가
+  // m-2. multiple이라면 multiple 버전 클릭 상태값 저장 로직 추가
+
   return (
     <>
-      <li key={id} className={S.accordionItem}>
-        <div className={S.accordionHeader} onClick={() => handleToggleItem(id)}>
+      {/* 5. 렌더링 요소 배치 - data.js 파일 불러오기 */}
+      <ol className={S.accordionList}>
+        <h1>{/* 제목 */}</h1>
+        {/* 6. isActive 상태일 때의 boolean값 처리 */}
+        {/* 7. AccordionItems 컴포넌트에 prop 전달 */}
+        <AccordionItems />
+      </ol>
+    </>
+  );
+};
+
+// AccordionItems 컴포넌트
+// 8. AccordionList에서 넘겨받은 prop 받아오기
+const AccordionItems = () => {
+  // 9. 받아온 prop 요소에 배치
+  return (
+    <>
+      <li
+        key={
+          {
+            /* id값 */
+          }
+        }
+        className={S.accordionItem}
+      >
+        <div
+          className={S.accordionHeader}
+          onClick={() => {
+            /* 함수*/
+          }}
+        >
           <div>
-            <span>{number}. </span>
-            <strong>{question}</strong>
+            <span>{/* 숫자 */}. </span>
+            <strong>{/* 제목 */}</strong>
           </div>
           <div className={S.accordionIcon}>
-            {isActive ? (
+            {/* {isActive ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -46,56 +81,17 @@ const AccordionItems = ({
                   clipRule="evenodd"
                 />
               </svg>
-            )}
+            )} */}
           </div>
         </div>
         <div
-          className={`${S.accordionContent} ${
-            isActive ? S.active : S.inactive
-          }`}
+        // className={`${S.accordionContent} ${
+        //   isActive ? S.active : S.inactive
+        // }`}
         >
-          <p>{answer}</p>
+          <p>{/* 답변 */}</p>
         </div>
       </li>
-    </>
-  );
-};
-
-const AccordionList = ({ title, multiple }) => {
-  const [activeId, setActiveId] = useState();
-  const [activeArr, setActiveArr] = useState([]);
-
-  const handleToggleItem = (id) => {
-    setActiveId((prevId) => (prevId === id ? null : id));
-
-    if (multiple) {
-      setActiveArr((prevIds) => {
-        if (prevIds.includes(id)) {
-          return prevIds.filter((itemId) => itemId !== id); // 이미 활성화된 경우 비활성화
-        } else {
-          return [...prevIds, id]; // 활성화되지 않은 경우 활성화
-        }
-      });
-    }
-  };
-
-  return (
-    <>
-      <ol className={S.accordionList}>
-        <h1>{title}</h1>
-        {data.map((item) => {
-          let isActive = activeId === item.id;
-          if (multiple) isActive = activeArr.includes(item.id);
-          return (
-            <AccordionItems
-              {...item}
-              key={item.id}
-              handleToggleItem={handleToggleItem}
-              isActive={isActive}
-            />
-          );
-        })}
-      </ol>
     </>
   );
 };
