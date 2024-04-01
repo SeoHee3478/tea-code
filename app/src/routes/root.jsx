@@ -13,6 +13,7 @@ export async function loader() {
 
 //0번째 index에 추가해주세요.
 const RouteList = [
+  { link: "accordion", title: "아코디언" },
   { link: "intro", title: "사용자 설명서 (Intro.js)" },
   { link: "throttle", title: "쓰로틀" },
   { link: "fullpage-scroll", title: "풀페이지스크롤" },

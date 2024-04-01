@@ -17,6 +17,7 @@ import ImageLazyLoading from "./pages/ImageLazyLoading";
 import FullPageScroll from "./pages/FullPageScroll";
 import ThrottleContainer from "./pages/Throttle";
 import Intro from "./pages/Intro";
+import Accordion from "./pages/Accordion";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     loader: rootLoader,
     action: rootAction,
     children: [
+      {
+        path: "accordion",
+        element: <Accordion />,
+      },
       {
         path: "intro",
         element: <Intro />,
