@@ -3,16 +3,49 @@ import S from "./index.module.scss";
 // 1. import
 //    1.1. Intro.js-react에서 Steps와 Hints를 import합니다.
 //    1.2. Intro.js의 CSS 파일을 import합니다.
+import { Steps, Hints } from "intro.js-react";
+import "intro.js/introjs.css";
+
 const Intro = () => {
-  // Step과 Hint의 활성화 여부를 관리하는 상태를 정의합니다. (stepsEnabled, hintsEnabled)
+  const isVisited = localStorage.getItem("isVisited");
+  //2. Step과 Hint의 활성화 여부를 관리하는 상태를 정의합니다. (stepsEnabled, hintsEnabled)
+  const [stepsEnabled, setStepsEnabled] = useState(!isVisited);
+  const hintsEnabled = !isVisited;
 
   // 3. 사용자 가이드 투어를 위한 Step들을 정의합니다.
   //  3.1. 연결할 요소를 선택합니다. (element)
   //  3.2. 해당 요소에 대한 설명을 작성합니다. (title, intro)
+  const steps = [
+    {
+      element: ".step1",
+      title: "step1",
+      intro: "첫 번째 블러 효과입니다.",
+    },
+    {
+      element: ".step2",
+      title: "step2",
+      intro: "두 번째 블러 효과입니다.",
+    },
+    {
+      element: ".step3",
+      title: "step3",
+      intro: "세 번째 블러 효과입니다.",
+    },
+  ];
 
   // 4. 힌트를 정의합니다.
   //  4.1. 연결할 요소를 선택합니다. (element)
   //  4.2. 해당 요소에 대한 설명을 작성합니다. (hint)
+  const hints = [
+    {
+      element: ".hint1",
+      hint: "hint1에 대한 설명입니다",
+    },
+    {
+      element: ".hint2",
+      hint: "hint1에 대한 설명입니다",
+    },
+  ];
 
   const stepsOption = {
     nextLabel: "다음",
@@ -38,6 +71,15 @@ const Intro = () => {
   return (
     <div className="App">
       {/* <Step>, <Hint> 컴포넌트 구현 위치 */}
+      <Steps
+        enabled={isVisited ? stepsEnabled : stepsEnabled || true}
+        initialStep={0}
+        steps={steps}
+        onExit={() => setStepsEnabled(false)}
+        options={stepsOption}
+        onComplete={() => localStorage.setItem("isVisited", "true")}
+      />
+      <Hints enabled={hintsEnabled} hints={hints} options={hintsOption} />
 
       <div className={S.containerFluid}>
         <div>
