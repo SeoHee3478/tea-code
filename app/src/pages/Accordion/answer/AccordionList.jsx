@@ -5,7 +5,7 @@ import S from "./index.module.scss";
 
 const AccordionItems = ({
   id,
-  number,
+  index,
   question,
   answer,
   handleToggleItem,
@@ -16,7 +16,7 @@ const AccordionItems = ({
       <li key={id} className={S.accordionItem}>
         <div className={S.accordionHeader} onClick={() => handleToggleItem(id)}>
           <div>
-            <span>{number}. </span>
+            <span>{index}. </span>
             <strong>{question}</strong>
           </div>
           <div className={S.accordionIcon}>
@@ -109,7 +109,7 @@ AccordionList.propTypes = {
 
 AccordionItems.propTypes = {
   id: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   handleToggleItem: PropTypes.func.isRequired,
