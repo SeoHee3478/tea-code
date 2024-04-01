@@ -105,7 +105,7 @@ AccordionList.propTypes = {
 
 AccordionItems.propTypes = {
   id: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
   handleToggleItem: PropTypes.func.isRequired,
