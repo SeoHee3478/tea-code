@@ -1,15 +1,4 @@
 import { Form, Link, Navigate, Outlet, useLocation } from "react-router-dom";
-import { getContacts, createContact } from "../contacts";
-
-export async function action() {
-  const contact = await createContact();
-  return { contact };
-}
-
-export async function loader() {
-  const contacts = await getContacts();
-  return { contacts };
-}
 
 //0번째 index에 추가해주세요.
 const RouteList = [
@@ -36,19 +25,16 @@ export default function Root() {
       <div id="sidebar">
         <h1>List</h1>
         <div>
-          <form id="search-form" role="search">
+          <Form id="search-form" role="search">
             <input
               id="q"
               aria-label="Search list"
-              placeholder="Search"
+              placeholder="기능을 검색하세요."
               type="search"
               name="q"
             />
             <div id="search-spinner" aria-hidden hidden={true} />
             <div className="sr-only" aria-live="polite"></div>
-          </form>
-          <Form method="post">
-            <button type="submit">New</button>
           </Form>
         </div>
         <nav>
