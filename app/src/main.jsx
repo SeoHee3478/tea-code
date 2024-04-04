@@ -2,10 +2,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Root, {
-  loader as rootLoader,
-  action as rootAction,
-} from "./routes/root";
 import ErrorPage from "./error-page";
 import InfiniteScroll from "./pages/InfiniteScroll";
 import Sort from "./pages/Sort";
@@ -18,14 +14,13 @@ import FullPageScroll from "./pages/FullPageScroll";
 import ThrottleContainer from "./pages/Throttle";
 import Intro from "./pages/Intro";
 import Accordion from "./pages/Accordion";
+import Root from "./routes/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
-    action: rootAction,
     children: [
       {
         path: "accordion",
