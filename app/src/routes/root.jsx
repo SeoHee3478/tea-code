@@ -2,6 +2,7 @@ import { Form, Link, Navigate, Outlet, useLocation } from "react-router-dom";
 
 //0번째 index에 추가해주세요.
 const RouteList = [
+  { link: "chart", title: "차트" },
   { link: "accordion", title: "아코디언" },
   { link: "intro", title: "사용자 설명서 (Intro.js)" },
   { link: "throttle", title: "쓰로틀" },

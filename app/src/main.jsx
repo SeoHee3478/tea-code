@@ -15,6 +15,7 @@ import ThrottleContainer from "./pages/Throttle";
 import Intro from "./pages/Intro";
 import Accordion from "./pages/Accordion";
 import Root from "./routes/root";
+import Chart from "./pages/Chart";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "chart",
+        element: <Chart />,
+      },
       {
         path: "accordion",
         element: <Accordion />,
