@@ -1,5 +1,6 @@
 import BarChart from "./BarChart";
 import BubbleChart from "./BubbleChart";
+import { DoughnutChart } from "./DoughnutChart";
 import MultitypeChart from "./MultitypeChart";
 import RadarChart from "./RadarChart";
 
@@ -21,6 +22,10 @@ const Chart = () => {
       <div>
         <p>Bubble chart</p>
         <BubbleChart />
+      </div>
+      <div>
+        <p>내맘대로 chart</p>
+        <DoughnutChart />
       </div>
     </>
   );
