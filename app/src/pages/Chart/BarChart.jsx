@@ -32,11 +32,11 @@ export const options = {
   responsive: true, // 차트가 반응형이 되도록 설정합니다.
   plugins: {
     legend: {
-      position: "right", // 범례를 차트의 오른쪽에 위치시킵니다.
+      position: "left", // 범례를 차트의 오른쪽에 위치시킵니다.
     },
     title: {
       display: true, // 제목을 표시합니다.
-      text: "Chart.js Horizontal Bar Chart", // 제목의 텍스트를 설정합니다.
+      text: "Horizontal Bar Chart", // 제목의 텍스트를 설정합니다.
     },
   },
 };

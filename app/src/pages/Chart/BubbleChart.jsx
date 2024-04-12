@@ -29,7 +29,7 @@ export const data = {
       data: Array.from({ length: 50 }, () => ({
         x: faker.number.int({ min: -100, max: 100 }), // x 좌표에 대한 랜덤 숫자 데이터를 생성합니다.
         y: faker.number.int({ min: -100, max: 100 }), // y 좌표에 대한 랜덤 숫자 데이터를 생성합니다.
-        r: faker.number.int({ min: 5, max: 20 }), // 버블의 반지름에 대한 랜덤 숫자 데이터를 생성합니다.
+        r: faker.number.int({ min: 1, max: 20 }), // 버블의 반지름에 대한 랜덤 숫자 데이터를 생성합니다.
       })),
       backgroundColor: "rgba(255, 99, 132, 0.5)", // 빨간색으로 배경을 설정합니다.
     },

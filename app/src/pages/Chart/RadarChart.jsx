@@ -30,6 +30,13 @@ export const data = {
       borderColor: "rgba(255, 99, 132, 1)", // 데이터 영역의 테두리 색입니다.
       borderWidth: 1, // 데이터 영역의 테두리 두께입니다.
     },
+    {
+      label: "# of Votes2", // 데이터셋의 레이블입니다.
+      data: [3, 9, 3, 10, 2, 3], // 각 레이블에 해당하는 데이터 값입니다.
+      backgroundColor: "rgba(99, 242, 255, 0.2)", // 데이터 영역의 배경색입니다.
+      borderColor: "#288878", // 데이터 영역의 테두리 색입니다.
+      borderWidth: 1, // 데이터 영역의 테두리 두께입니다.
+    },
   ],
 };
 
