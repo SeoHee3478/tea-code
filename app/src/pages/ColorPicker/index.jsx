@@ -3,10 +3,8 @@ import S from "./index.module.scss";
 
 const ColorPicker = () => {
   // 1-1. 미리보기 이미지 정보를 저장할 상태값 추가(previewImage)
-  const [previewImage, setPreviewImage] = useState("");
 
   // 2-1. 선택한 컬러 코드를 저장할 상태값 추가(colorCode)
-  const [colorCode, setColorCode] = useState("");
 
   // 1. 이미지를 저장하는 함수 추가
   const handleInputImage = () => {
