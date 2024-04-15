@@ -16,6 +16,7 @@ import Intro from "./pages/Intro";
 import Accordion from "./pages/Accordion";
 import Root from "./routes/root";
 import Chart from "./pages/Chart";
+import ColorPicker from "./pages/ColorPicker";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "color-picker",
+        element: <ColorPicker />,
+      },
       {
         path: "chart",
         element: <Chart />,
