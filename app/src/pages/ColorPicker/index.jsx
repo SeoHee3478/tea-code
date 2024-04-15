@@ -1,4 +1,3 @@
-import { useState } from "react";
 import S from "./index.module.scss";
 
 const ColorPicker = () => {
@@ -22,9 +21,8 @@ const ColorPicker = () => {
   // 객체 생성 : new EyeDropper()
   // open() 메서드로 sRGBHex 형식의 컬러값 가져오기
   const handleColorPicker = async () => {
-    // eslint-disable-next-line no-undef
-
     // EyeDropper() 객체 생성
+    // eslint-disable-next-line no-undef
 
     try {
       // 컬러값 받아와서 저장
@@ -55,7 +53,7 @@ const ColorPicker = () => {
               type="file"
               id="image"
               accept="image/*"
-              onChange={}
+              // onChange={}
             />
           </div>
 
@@ -66,15 +64,16 @@ const ColorPicker = () => {
                 Open ColorPicker(input)
               </label>
               <input
-                type="color"
+                type=""
                 id="colorPick"
                 className={S.openPickerInput}
+                // onChange={}
               />
             </div>
             <div>
               <button
                 className={S.openPickerButton}
-                onClick={}
+                // onClick={}
               >
                 Open ColorPicker(EyeDropper API)
               </button>
@@ -83,7 +82,7 @@ const ColorPicker = () => {
 
           <div className={S.formSection}>
             <p>3. 선택한 컬러</p>
-            {/** 렌더링 조건 */ ? (
+            {/* { ? (
               <>
                 <button
                   className={S.selectedColor}
@@ -95,19 +94,19 @@ const ColorPicker = () => {
               </>
             ) : (
               <p className={S.noticeText}>이미지와 컬러를 선택해주세요!</p>
-            )}
+            )} */}
           </div>
         </div>
 
         <div className={S.rightColumn}>
-          {/** 렌더링 조건 */ ? (
+          {/* { ? (
             <>
               <img src={} alt="image" />
               <div style={{ backgroundImage: `url(${})` }}></div>
             </>
           ) : (
             <p>No Image</p>
-          )}
+          )} */}
         </div>
       </div>
     </div>
