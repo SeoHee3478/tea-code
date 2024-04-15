@@ -11,14 +11,10 @@
     cursor: pointer;
   }
 
-  label {
-  }
-
   .pickerWrapper {
     display: grid;
     grid-template-columns: 1fr;
     padding: 20px;
-    height: auto;
   }
 
   .formSection {
@@ -30,6 +26,26 @@
 
       font-size: 16px;
       cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .inputWrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .openPickerInput[type="color"] {
+        width: 65px;
+        height: 50px;
+        padding: 3px;
+        border-radius: 8px;
+        border: 2px solid #46495e;
+      }
+
+      .openPickerInputLabel {
+        font-size: 14px;
+        font-weight: 700;
+      }
     }
 
     .openPickerButton:hover {
@@ -41,6 +57,7 @@
     width: 100%;
     padding: 20px 30px;
     background-color: #22232b;
+    height: 500px;
   }
 
   .rightColumn {
@@ -52,6 +69,7 @@
 
     position: relative;
     overflow: hidden;
+    height: 500px;
 
     img {
       max-width: 250px;
@@ -86,6 +104,22 @@
 
   .formSection {
     margin-bottom: 20px;
+
+    & > .selectedColor {
+      width: 300px;
+      height: 100px;
+      cursor: pointer;
+    }
+
+    & > .selectedColor span {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    & > .noticeText {
+      font-size: 14px;
+      color: #9d9faa;
+    }
   }
 }
 
@@ -93,6 +127,10 @@
   .wrapper {
     .pickerWrapper {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .openPickerButton {
+      margin-top: 20px;
     }
   }
 }
